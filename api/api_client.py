@@ -93,7 +93,7 @@ class BearerTokenLoader(object):
             raise Exception("Service token file does not exists.")
 
         with open(self._token_filename) as f:
-            self.token = f.read()
+            self.token = f.read().replace('\n', '')
             if not self.token:
                 raise Exception("Token file exists but empty.")
 
